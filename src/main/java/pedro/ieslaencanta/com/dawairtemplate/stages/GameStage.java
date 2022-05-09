@@ -17,7 +17,6 @@ import pedro.ieslaencanta.com.dawairtemplate.model.Size;
 
 
 /**
- *
  * @author Pedro
  */
 public class GameStage extends AbstractScene {

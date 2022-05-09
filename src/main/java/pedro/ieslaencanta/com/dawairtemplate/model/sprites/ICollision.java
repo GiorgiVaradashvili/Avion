@@ -5,7 +5,6 @@
 package pedro.ieslaencanta.com.dawairtemplate.model.sprites;
 
 /**
- *
  * @author pedro
  */
 public interface ICollision {

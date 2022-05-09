@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import pedro.ieslaencanta.com.dawairtemplate.Background;
 import pedro.ieslaencanta.com.dawairtemplate.IWarnClock;
+import pedro.ieslaencanta.com.dawairtemplate.model.sprites.Fighter;
 import pedro.ieslaencanta.com.dawairtemplate.model.sprites.IDrawable;
 import pedro.ieslaencanta.com.dawairtemplate.model.sprites.IKeyListener;
 
@@ -39,7 +40,7 @@ public class Level implements IDrawable, IWarnClock, IKeyListener {
     private int position;
     private int fin;
     private Background background;
-   
+    private Fighter fighter;
     private GraphicsContext bg_ctx;
     private MediaPlayer player;
     private float[] probabilidadenemigos;
@@ -56,6 +57,12 @@ public class Level implements IDrawable, IWarnClock, IKeyListener {
         this.fin = fin;
         this.s = s;
         //crear el avion
+        //crear el avion
+this.fighter = new Fighter(
+               3,
+               new Size(74, 26),
+               new Coordenada(20, s.getHeight() / 2),
+               new Rectangle(new Coordenada(0, 0), new Coordenada(s.getWidth(), s.getHeight())));
           this.probabilidadenemigos = probabilidad_enemigos;
         this.initSound(music_path);
 
@@ -87,6 +94,7 @@ public class Level implements IDrawable, IWarnClock, IKeyListener {
             gc.fillText(Level.msg[0], 100, 200);
 
         }
+        this.fighter.draw(gc);
        
     }
 
@@ -114,6 +122,7 @@ public class Level implements IDrawable, IWarnClock, IKeyListener {
     private void TicTacChildrens() {
         //pintar el fondo
         this.background.TicTac();
+        this.fighter.TicTac();
        
     }
 
@@ -165,7 +174,7 @@ public class Level implements IDrawable, IWarnClock, IKeyListener {
 
     @Override
     public void onKeyPressed(KeyCode code) {
-        //pasar el key code al avion
+        this.fighter.onKeyPressed(code);//pasar el key code al avion
        
     }
 
@@ -176,7 +185,7 @@ public class Level implements IDrawable, IWarnClock, IKeyListener {
             this.setEstado(Level.Estado.RUNNING);
         }
         if (this.getEstado() == Level.Estado.RUNNING) {
-            
+            this.fighter.onKeyReleased(code);
             if (player.getStatus() == MediaPlayer.Status.READY) {
                 player.play();
             }

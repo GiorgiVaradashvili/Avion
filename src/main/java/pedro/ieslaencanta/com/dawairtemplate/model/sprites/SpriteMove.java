@@ -12,11 +12,9 @@ import pedro.ieslaencanta.com.dawairtemplate.model.Size;
 
 
 /**
- *
  * @author Pedro
  */
 /**
- *
  * @author Pedro
  */
 public abstract class SpriteMove extends Sprite implements IMove {

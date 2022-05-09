@@ -7,7 +7,6 @@ package pedro.ieslaencanta.com.dawairtemplate.model.sprites;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- *
  * @author Pedro
  */
 public interface IDrawable {

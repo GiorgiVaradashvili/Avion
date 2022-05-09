@@ -12,7 +12,6 @@ import pedro.ieslaencanta.com.dawairtemplate.model.Size;
 
 
 /**
- *
  * @author Pedro
  */
 public abstract class AbstractScene implements IScene{

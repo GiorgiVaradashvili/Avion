@@ -10,7 +10,6 @@ import pedro.ieslaencanta.com.dawairtemplate.IWarnClock;
 
 
 /**
- *
  * @author Pedro
  */
 public interface IScene extends IKeyListener, IWarnClock, IDrawable{

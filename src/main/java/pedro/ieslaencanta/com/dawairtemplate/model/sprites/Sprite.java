@@ -17,8 +17,8 @@ import pedro.ieslaencanta.com.dawairtemplate.model.Size;
  */
 public abstract class Sprite implements IDrawable {
 
-    private Coordenada posicion;
-    private Size size;
+    protected Coordenada posicion;
+    protected Size size;
     private boolean visible;
     private boolean live;
 
